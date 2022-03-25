@@ -1,6 +1,6 @@
 package com.biblioteca.Biblioteca.repository;
 
-import com.biblioteca.Biblioteca.model.Mangas;
+import com.biblioteca.Biblioteca.model.Manga;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
@@ -8,8 +8,8 @@ import org.springframework.stereotype.Repository;
 import java.util.Optional;
 
 @Repository
-public interface MangasRepository extends JpaRepository <Mangas, Long> {
+public interface MangaRepository extends JpaRepository <Manga, Long> {
 
-    Optional<Mangas> findMangasByName(@Param("name") String manga);
+    Optional<Manga> findMangasByName(@Param("name") String manga);
 
 }

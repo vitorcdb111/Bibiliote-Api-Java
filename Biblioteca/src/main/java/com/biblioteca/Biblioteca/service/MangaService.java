@@ -1,7 +1,7 @@
 package com.biblioteca.Biblioteca.service;
 
-import com.biblioteca.Biblioteca.model.Mangas;
-import com.biblioteca.Biblioteca.repository.MangasRepository;
+import com.biblioteca.Biblioteca.model.Manga;
+import com.biblioteca.Biblioteca.repository.MangaRepository;
 import exceptions.ResourceNotFoundException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,38 +13,38 @@ import java.util.Optional;
 
 @Slf4j
 @Service
-public class MangasService {
+public class MangaService {
 
     @Autowired
-    private MangasRepository repository;
+    private MangaRepository repository;
 
-    public List<Mangas> findAllMangas()
+    public List<Manga> findAllMangas()
     {
         return repository.findAll();
     }
 
-    public Mangas insertManga(Mangas manga)
+    public Manga insertManga(Manga manga)
     {
         return repository.save(manga);
     }
 
-    public Optional<Mangas> findMangaById(Long codManga)
+    public Optional<Manga> findMangaById(Long codManga)
     {
-        Optional<Mangas> optionalManga = repository.findById(codManga);
+        Optional<Manga> optionalManga = repository.findById(codManga);
 
         return optionalManga;
     }
 
-    public Optional<Mangas> findMangaByName(String manga)
+    public Optional<Manga> findMangaByName(String manga)
     {
-        Optional<Mangas> optionalManga = repository.findMangasByName(manga);
+        Optional<Manga> optionalManga = repository.findMangasByName(manga);
 
         return optionalManga;
     }
 
-    public Mangas updateManga(Mangas changedManga)
+    public Manga updateManga(Manga changedManga)
     {
-        Optional<Mangas> manga = repository.findById(changedManga.getCodManga());
+        Optional<Manga> manga = repository.findById(changedManga.getCodManga());
 
         return repository.save(changedManga);
     }

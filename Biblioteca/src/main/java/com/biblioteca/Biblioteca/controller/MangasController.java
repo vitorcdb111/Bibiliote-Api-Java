@@ -1,8 +1,8 @@
 package com.biblioteca.Biblioteca.controller;
 
 
-import com.biblioteca.Biblioteca.model.Mangas;
-import com.biblioteca.Biblioteca.service.MangasService;
+import com.biblioteca.Biblioteca.model.Manga;
+import com.biblioteca.Biblioteca.service.MangaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -14,28 +14,28 @@ import java.util.Optional;
 public class MangasController {
 
     @Autowired
-    private MangasService service;
+    private MangaService service;
 
     @GetMapping(value = "/")
-    public List<Mangas> findAllMangas()
+    public List<Manga> findAllMangas()
     {
         return service.findAllMangas();
     }
 
     @PostMapping(value = "/insert-manga")
-    public Mangas insertManga(@RequestBody Mangas manga)
+    public Manga insertManga(@RequestBody Manga manga)
     {
         return service.insertManga(manga);
     }
 
     @GetMapping(value = "find-manga/{manga}")
-    public Optional<Mangas> findMangaByName(@PathVariable String manga)
+    public Optional<Manga> findMangaByName(@PathVariable String manga)
     {
         return service.findMangaByName(manga);
     }
 
     @PutMapping(value ="update-manga/{codManga}")
-    public Mangas updateManga(@RequestBody Mangas manga)
+    public Manga updateManga(@RequestBody Manga manga)
     {
         return service.updateManga(manga);
     }

@@ -1,22 +1,19 @@
 package com.biblioteca.Biblioteca.model;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
-@Entity
-public class Mangas {
+public class Manga {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="codmanga")
     private Long codManga;
     private String name;
-    private Double chapter;
+    private Double chapters;
     private Integer volume;
+    private Autor autor;
+    private Integer numPages;
 }
