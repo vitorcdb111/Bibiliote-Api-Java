@@ -3,6 +3,7 @@ package com.biblioteca.Biblioteca.service;
 import com.biblioteca.Biblioteca.model.Autor;
 import com.biblioteca.Biblioteca.repository.AutorRepository;
 import exceptions.ResourceNotFoundException;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Service;
@@ -10,6 +11,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
 
+@Slf4j
 @Service
 public class AutorService {
 

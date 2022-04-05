@@ -5,6 +5,7 @@ import lombok.Data;
 import javax.persistence.*;
 import java.util.List;
 
+@Entity
 @Data
 public class Autor {
     @Id
@@ -13,8 +14,8 @@ public class Autor {
     private Long codAutor;
     private String name;
     private Integer age;
-    private List<Manga> mangas;
-    private List<Manga> animes;
+    private String mangas;
+    private String animes;
     private String biografy;
 
 

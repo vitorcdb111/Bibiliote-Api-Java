@@ -4,6 +4,7 @@ import lombok.Data;
 
 import javax.persistence.*;
 
+@Entity
 @Data
 public class Manga {
 
@@ -14,6 +15,6 @@ public class Manga {
     private String name;
     private Double chapters;
     private Integer volume;
-    private Autor autor;
+    private String autor;
     private Integer numPages;
 }
